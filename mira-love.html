@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Mira 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #f9f3ff);
+      color: #444;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      color: #d63384;
+      margin-top: 1em;
+    }
+    p {
+      font-size: 1.2em;
+      margin: 1em auto;
+      max-width: 600px;
+    }
+    .reveal-btn {
+      padding: 10px 20px;
+      background: #d63384;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    .reveal-btn:hover {
+      background: #c21868;
+    }
+    .hidden-message {
+      display: none;
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 1.1em;
+      color: #555;
+    }
+    .floating-hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-hearts" id="hearts"></div>
+  <h1>For Mira 💖</h1>
+  <p>In this little corner of the internet, I just wanted to remind you of something simple yet true: You are special. Your smile brightens my day, your laugh is music to my soul, and your presence makes everything better. 💫</p>
+  <p>With every word, every heartbeat, every little thought... you’re there. Always. Forever. Yours truly, Abdul Monum. 💌</p>
+
+  <button class="reveal-btn" onclick="document.getElementById('secret').style.display='block'">Click to reveal a secret 💌</button>
+  <div class="hidden-message" id="secret">You’re my favorite everything. 🌸</div>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const heartContainer = document.getElementById("hearts");
+    for (let i = 0; i < 30; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "%";
+      heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+      heartContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
